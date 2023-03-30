@@ -10,12 +10,18 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingInterceptor } from './http-interceptor';
+import { MatTableComponent } from './mat-table/mat-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddUserComponent,
-    UsersComponent
+    UsersComponent,
+    MatTableComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,11 @@ import { LoadingInterceptor } from './http-interceptor';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    PaginationModule.forRoot() 
+    PaginationModule.forRoot(),
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     {
